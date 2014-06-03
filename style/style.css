@@ -1,0 +1,203 @@
+@charset "utf-8";
+body {
+	font: 100%/1.4 Century Gothic, sans-serif;
+	background-color:#fff;
+	background-image:url(../images/bg.png);
+	background-position:0 60px;
+	background-repeat:no-repeat;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #42413C;
+	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+}
+
+/* ~~this fixed width container surrounds the other divs~~ */
+.container {
+	width: 960px;
+	background: none;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+}
+
+/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
+.header {
+	background-color:transparent;
+}
+
+#menu{
+	width:100%;
+	height: 32px;
+	margin-top:17px;
+	margin-bottom:20px;
+	background-color:transparent;
+	background:url(../images/logo.png) no-repeat;
+	padding:0;
+	padding-top:3px;
+}
+
+#menu ul{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	position:relative;
+	top:-4px;
+}
+
+#menu li{
+	display: inline;
+	cursor: pointer;
+}
+
+#menu a{
+	color:#FFF;
+	text-decoration:none;
+	font-size:20px;
+	margin:10px;
+	padding:15px;
+}
+#menu a#current{
+	z-index:10 !important;
+	position:relative;
+	left:0;
+	top:-10px;
+	padding:10px;
+	background:#f71534;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#menu li ul {
+    display: none;
+}
+#menu li:hover ul {
+	display: none;
+}
+#slideshow{
+	width:100%;
+	margin-bottom:32px;
+}
+#slideshow img{
+	width:958px;
+	height:351px;
+}
+#slideshow #slidetop{
+	width:100%;
+	height:62px;
+	background:url(../images/banner-text.png) top left no-repeat;
+	margin-bottom:15px;
+}
+
+#slideshow #slidebot{
+	width:100%;
+	height:350px;
+	background:#0CF;
+	margin-bottom:10px;
+	border:#003399 solid 1px;
+}
+
+.sidebar1 {
+	float: right;
+	width: 260px;
+	background: #f71534;
+	padding: 10px 5px;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-bottomleft: 8px;
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+	color:#FFF;
+}
+.sidebar1 img{width:260px;}
+.sidebar1 h1{margin:0; padding:5px;margin-bottom:5px; font-size:28px;}
+.sidebar1 p{margin:0px; padding:5px;}
+.sidebar1 a{font-weight:600; cursor:pointer; float:right; text-decoration:none; color:#FFF;}
+.content {
+	padding: 0;
+	margin:0;
+	width: 690px;
+	float: left;
+	margin-bottom:20px;
+	min-height:610px;
+}
+.content .normalDiv img{float: left; margin-right:5px; width:120px; height:120px;}
+.content .normalDiv a{color:#003399; text-decoration:none; float:right; margin-right:10px; font-weight:600; font-size:13px;}
+.content .normalDiv h1{font-size:20px; color:#003399; padding-top:10px;}
+.content .specialDiv a{color:#003399; font-weight:600; text-decoration:none; position:relative; top:65px; left:410px;}
+.content p{padding-left:0; margin-left:0;}
+.content p.innerP{padding-left:10px;}
+.content h1, h2, h3, h4, h5, h6{margin-left:0px; padding-left:0; padding-bottom:7px; margin-bottom:0;}
+.content h1.special{margin-left:10px; padding-left:0; padding-bottom:7px; margin-bottom:0;}
+.content h2{color:#ea1414; font-family:"Century Gothic"; font-size:19px;}
+.content h3{color:#077b1a; font-family:"Century Gothic"; font-size:17px;}
+.content h1{margin-bottom:10px;}
+.content h1{margin-top:7px; color:#003399;}
+.content ul{padding-left:25px; margin-left:25px;}
+/* ~~ The footer ~~ */
+.content .specialDiv{background-color:#def3fc; padding:3px 15px; height:535px;}
+.content .specialDiv img{width:150px; height:150px;}
+.content p.extralinks a{display:block; text-decoration:none; font-weight:600; color:#003399;}
+.footer {
+	height:200px;
+	color:white;
+	margin-top:20px;
+	padding: 20px 0;
+	padding-bottom:10px;
+	background: #003399;
+	position: relative;/* this gives IE6 hasLayout to properly clear */
+	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+	-webkit-border-top-left-radius: 10px;
+-webkit-border-top-right-radius: 10px;
+-moz-border-radius-topleft: 10px;
+-moz-border-radius-topright: 10px;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+}
+.footer p{margin-left:0; padding-left:0;}
+.footer .left{width:300px; float:left; margin-right:20px; margin-left:10px}
+.footer .left img{width:200px; height:auto}
+.footer .center{width:300px; float:left;margin-right:20px; font-size:15px;}
+.footer .right{width:300px; float:left;height:100px; margin-right:10px;}
+.footer .right img{width:55px; height:55px;}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
